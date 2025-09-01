@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppProviders } from "./providers";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { SkipLink } from "@/components/site/SkipLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +23,18 @@ export const metadata: Metadata = {
   },
   description: "Schnelle, moderne Web-Erlebnisse mit sanfter Motion und Glow.",
   metadataBase: new URL("https://routiq.local"),
+  openGraph: {
+    title: "routiq",
+    description: "Smart-City-Guides mit TSP-Routen, POI-Discovery und sanfter Motion",
+    url: "https://routiq.local",
+    siteName: "routiq",
+    locale: "de_DE",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -33,8 +46,9 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col`}>
         <AppProviders>
+          <SkipLink />
           <Header />
-          <main className="mx-auto w-full max-w-6xl px-4 flex-1">
+          <main id="main-content" className="mx-auto w-full max-w-6xl px-4 flex-1">
             {children}
           </main>
           <Footer />

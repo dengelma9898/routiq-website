@@ -82,7 +82,7 @@ export default function Home() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Funktionen</h2>
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6" role="list">
         {[
           { id: "tsp", title: "TSP‑optimierte Routen", desc: "Intelligente Reihenfolge für Stopps.", icon: Sparkles, details: "Routenoptimierung via TSP‑Heuristiken; Start/Ziel fix; Re‑Ranking möglich." },
           { id: "poi", title: "POI‑Discovery", desc: "Orte finden und hinzufügen.", icon: Map, details: "Schnelle Ortssuche, Kategorien, Vorschläge; manuelle Ergänzungen möglich." },
@@ -91,7 +91,7 @@ export default function Home() {
           { id: "reopt", title: "Vollständige Reoptimierung", desc: "CTA „Jetzt optimieren“.", icon: RefreshCw, details: "Neuordnung aller Stopps; robuste Heuristiken und Constraints." },
           { id: "perf", title: "Caching & Performance", desc: "Schnelle Ladezeiten & Caches.", icon: Rocket, details: "POI‑ und Routen‑Caches; minimaler Overhead; sauberes Error‑Handling." },
         ].map(({ id, title, desc, icon: Icon }) => (
-          <MotionCard key={id} className="relative">
+          <MotionCard key={id} className="relative" role="listitem">
             <SpotlightCard className="p-4 overflow-hidden">
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_80%_at_50%_0%,oklch(0.92_0.22_270_/_0.14),transparent_70%)]" />
             <CardHeader className="flex flex-row items-center gap-3">
@@ -191,7 +191,7 @@ export default function Home() {
             Fragen, Ideen oder Feedback? Schreib uns – wir freuen uns über Austausch rund um Routiq.
           </p>
           <div className="mt-6 grid md:grid-cols-2 gap-4">
-            <a href="mailto:hello@routiq.app" className="rounded-md border p-4 hover:bg-accent hover:text-accent-foreground transition-colors">hello@routiq.app</a>
+            <a href="mailto:dengelma.solutions@gmail.com" className="rounded-md border p-4 hover:bg-accent hover:text-accent-foreground transition-colors">dengelma.solutions@gmail.com</a>
             <a href="https://github.com/dengelma9898/smart-city-guide" target="_blank" rel="noreferrer" className="rounded-md border p-4 hover:bg-accent hover:text-accent-foreground transition-colors">GitHub Projekt</a>
           </div>
         </Reveal>

@@ -120,6 +120,21 @@
   * {
     @apply border-border outline-ring/50;
   }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: oklch(1 0 0);
+    color: oklch(0.145 0 0);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 3px var(--ring);
+  }
+  .skip-link:focus {
+    left: 0.75rem;
+    top: 0.75rem;
+    z-index: 50;
+  }
   body {
     @apply bg-background text-foreground antialiased;
     /* Subtile Textur für Glow-Kontrast */
