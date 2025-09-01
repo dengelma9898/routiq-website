@@ -1,0 +1,54 @@
+# Cursor Project Rules
+
+language: de
+
+coding:
+  style:
+    - Verwende TypeScript strikt, keine any-Casts.
+    - Benenne Variablen/Funktionen aussagekräftig (Clean Code-Prinzipien).
+    - Verwende App Router (`src/app`), React Server Components wo sinnvoll.
+    - Tailwind v4 mit `@theme` Variablen; keine Legacy-Konfigdatei.
+    - UI: shadcn/ui + Radix, Icons: lucide-react.
+    - Motion: framer-motion für Page-Transitions und Micro-Interactions.
+  formatting:
+    - ESLint/Next-Config beibehalten, keine unnötigen Reformatierungen.
+    - Lange Zeilen umbrechen, Early-Returns, wenige Ebenen.
+
+paths:
+  import_alias: "@/*"
+  src_root: "src"
+
+ui:
+  theme:
+    mode: system
+    brand: trending-glow
+    colors:
+      - violet
+      - fuchsia
+      - cyan
+      - emerald
+  components:
+    include:
+      - button
+      - card
+      - navigation-menu
+      - input
+      - separator
+    providers:
+      - next-themes ThemeProvider (attribute=class)
+      - framer-motion template.tsx für Routen-Transitionen
+
+seo:
+  i18n:
+    default_locale: de
+  files:
+    - src/app/robots.ts
+    - src/app/sitemap.ts
+
+rules:
+  - Schreibe Benutzertexte/Kommentare auf Deutsch.
+  - Bevorzuge absolute Pfade in Tool-Aufrufen.
+  - Achte auf Barrierefreiheit (focus states, prefers-reduced-motion).
+
+
+
