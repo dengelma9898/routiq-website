@@ -14,7 +14,7 @@ on:
         type: string
 
 env:
-  DEPLOYMENT_FOLDER: ./
+  DEPLOYMENT_FOLDER: out
 
 jobs:
 # Please do not rename this job
@@ -37,11 +37,14 @@ jobs:
           corepack enable
           corepack prepare pnpm@10.15.0 --activate
 
-      - name: Build Node assets
+      - name: Build Node assets (static export)
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: pnpm install --frozen-lockfile && pnpm build
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+          # 'output: export' already writes static files to 'out/'
 
 # Please do not touch the following action
       - name: Store deployment content
